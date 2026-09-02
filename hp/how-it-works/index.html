@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ja">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HP のしくみ</title>
+<style>
+  body{max-width:44rem;margin:0 auto;padding:2rem 1.25rem 6rem;
+       font:16px/1.75 -apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans JP",sans-serif;
+       color:#17181A;background:#F6F6F7}
+  h1{font-size:1.4rem;margin:0 0 .5rem}
+  h2{font-size:1.15rem;margin:2.5rem 0 .5rem}
+  h3{font-size:1rem;margin:1.75rem 0 .35rem}
+  hr{border:0;border-top:1px solid #E7E8EA;margin:2rem 0}
+  ul{padding-left:1.25rem}
+  li{margin:.35rem 0}
+  code{font-size:.9em;background:#ECEDEF;padding:.1em .35em;border-radius:3px}
+  a{color:#17181A}
+</style>
+<h1>HP のしくみ</h1>
+<h2>HP とは</h2>
+<p>体力を、ゲームの HP として見えるようにするアプリです。眠り・食事・活動が数字を動かします。表面は魔法のように単純に、中身はここに書くとおり正直に作っています。</p>
+<h2>数字の出どころ</h2>
+<p>食事の栄養は、AI に数字を答えさせていません。写真や文字から<strong>何をどれだけ食べたか</strong>を読み取り、数値は<strong>文部科学省の食品成分表(2,478品目)</strong>から引きます。表に無い食品だけ推定になり、そのときは推定であることを画面に示します。分量は写真に見えている量を優先し、見えないときだけ一般的な一人前に落とします。</p>
+<p>だから画面にはこう書いてあります — <strong>「正直な見当であって、検査ではありません。どの行でもタップで直せます。」</strong></p>
+<h2>写真の扱い</h2>
+<p>写真は解析のためだけに送信され、<strong>解析が終われば残りません</strong>。送信先は OpenAI の API(学習には使われない設定)です。詳細はプライバシーポリシーへ。</p>
+<h2>最大 HP と5つの能力</h2>
+<p>最大 HP は、心肺(VO₂max)・筋量(FFMI)・回復(睡眠と心拍)から推定します。能力のものさしは公表された基準を使います:</p>
+<ul><li><strong>スタミナ</strong> — VO₂max を年齢×性別の基準表(FRIEND registry)と比べます</li><li><strong>筋力</strong> — 除脂肪量指数(FFMI)。身長差の補正(Kouri)を掛け、成人全年齢の実測分布(Kelly 2009, DXA)と比べます。<strong>これは筋肉の量のものさしで、体重あたりの強さは測っていません</strong></li><li><strong>回復力</strong> — 睡眠時間・睡眠効率・安静時心拍(いずれも公表基準)</li><li><strong>耐性</strong> — 心拍のゆらぎ(HRV)を5分測定の年齢基準(Voss)と比べます。前提: 外から受けるストレスは全員同じとみなし、身体に現れる徴候が少ないほど高い</li><li><strong>HP</strong> — 最大 HP の水準そのもの</li></ul>
+<p>数式の係数までは公開していませんが、<strong>何を・どの公表基準と比べているか</strong>は以上が全部です。</p>
+<h2>状態異常</h2>
+<p>脱水・硬直(座りすぎ)・疲労などは、水の記録・HealthKit・天気・自己申告から判定します。<strong>画面はあなたを責めません</strong> — カロリーは表示せず、食べ過ぎを警告せず、記録しなかった日を数えません。</p>
+<h2>無料と Pro</h2>
+<p>文字での食事記録は、ずっと無料です。Pro(¥480/月)は写真での記録と、31日より前の履歴・推移のグラフです。</p>
+<h2>問い合わせ</h2>
+<p>ebf4fa.inc@gmail.com</p>
