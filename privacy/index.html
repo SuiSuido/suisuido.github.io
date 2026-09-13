@@ -17,25 +17,27 @@
   a{color:#17181A}
 </style>
 <h1>HP — プライバシーポリシー / Privacy Policy</h1>
-<p>最終更新: 2026-08-24 · Last updated: 24 August 2026 連絡先 / Contact: <strong>ebf4fa.inc@gmail.com</strong></p>
+<p>最終更新: 2026-09-13 · Last updated: 13 September 2026 連絡先 / Contact: <strong>ebf4fa.inc@gmail.com</strong></p>
 <hr>
 <h2>日本語</h2>
 <h3>要約</h3>
-<p><strong>HP はアカウントを持ちません。</strong> サインインも、ユーザー登録もありません。記録したものは<strong>あなたの端末の中</strong>にあります。</p>
-<p>端末の外に出るのは <strong>1つだけ</strong>です — <strong>写真から食事を読み取るとき</strong>の、その写真。それも <strong>HP Pro を契約していて、かつ画面で明示的に同意した場合のみ</strong>です。</p>
-<h3>端末から出ないもの</h3>
-<ul><li><strong>ヘルスケアのデータ</strong>(睡眠・心拍・安静時心拍・心拍変動・活動量・体組成・服薬・生理周期) — HP が読むだけで、どこにも送りません</li><li><strong>文字で書いた食事の記録</strong> — Apple の端末内モデルが読みます。通信しません</li><li><strong>水分・体調・設定・HP の履歴</strong> — 端末内のファイルに保存されます</li></ul>
+<p>HPはアカウントなしでも利用できます。任意の「Appleでサインイン」で、HP専用の保存先に記録を保存し、別の端末で復元できます。サインインだけでは健康記録を送信しません。</p>
+<p>写真の読み取り、許可した天気の取得、購入の確認には外部サービスを使います。写真を送るのは <strong>HP Pro を契約していて、かつ画面で明示的に同意した場合のみ</strong>です。写真解析へヘルスケアのデータを送りません。アカウントから保存する場合の対象は下記の④をご覧ください。</p>
+<h3>通常は端末内で扱うもの</h3>
+<ul><li><strong>ヘルスケアのデータ</strong>(睡眠・心拍・安静時心拍・心拍変動・活動量・体組成・服薬・生理周期) — 元の取得キャッシュやクエリアンカーは転送しません。HP・能力履歴・体格などに含まれる計測値や推定値は、④の保存対象です</li><li><strong>文字で書いた食事の記録</strong> — 読み取りはAppleの端末内モデルで行います。保存済みの食事記録は④の対象です</li><li><strong>水分・体調・設定・HP の履歴</strong> — 端末内のファイルに保存されます</li></ul>
 <h3>端末から出るもの</h3>
 <p><strong>① 食事の写真(Pro かつ同意した場合のみ)</strong></p>
-<ul><li>同意画面で「送って読み取る」を押すまで、写真は<strong>一度も</strong>送られません</li><li>送り先は HP の中継サーバー(Cloudflare Workers)経由で <strong>OpenAI</strong> です</li><li>中継サーバーは<strong>何も保存しません</strong>。保存領域(KV・R2・D1・キュー)を1つも持っていません</li><li>返ってくるのは<strong>食品の名前と量</strong>だけです。カロリーや栄養素の数値は要求していません</li><li><strong>HP は写真を保存しません。</strong> 読み取りが終われば、その写真はアプリの中に残りません</li><li>この同意は、設定 →「写真のクラウド読み取り」でいつでも取り消せます</li></ul>
+<ul><li>同意画面で「送って読み取る」を押すまで、写真は<strong>一度も</strong>送られません</li><li>送り先は HP の中継サーバー(Cloudflare Workers)経由で <strong>OpenAI</strong> です</li><li>中継サーバーは<strong>何も保存しません</strong>。保存領域(KV・R2・D1・キュー)を1つも持っていません</li><li>返ってくるのは<strong>食品の名前と量</strong>だけです。カロリーや栄養素の数値は要求していません</li><li><strong>HP の中継サーバーは写真を保存しません。</strong> 食事を保存した場合は、長辺200ピクセル以下の縮小画像が端末内の食事・履歴に残ります。元画像や位置情報などの撮影メタデータは保存しません</li><li>APIへ送信した写真は解析のために使います。OpenAI APIは、明示的なデータ共有への参加がない限り学習に利用しません。HPは学習への提供を目的とした送信をしません</li><li>OpenAIでは不正利用監視のため、入力が通常最大30日保持される場合があります。法令や安全上の必要による延長、画像の安全審査などの例外があります。中継サーバーの非保存は、この保持期間がゼロであるという意味ではありません。詳細は<a href="https://developers.openai.com/api/docs/guides/your-data">OpenAIのデータ管理方針</a>を参照してください</li><li>この同意は、設定 →「写真のクラウド読み取り」でいつでも取り消せます</li></ul>
 <p><strong>② おおよその位置情報(許可した場合のみ)</strong></p>
 <ul><li>天気を読むためだけに使います。<strong>正確な位置ではなく、おおよその位置</strong>です</li><li>使うのは<strong>表示している天気と、その日の水分目標</strong>の2つだけです</li><li>許可しなければ、天気の表示が静かに消えるだけです。何も咎めません</li></ul>
 <p><strong>③ 購入の処理</strong></p>
-<ul><li>購入は App Store が処理します。HP はカード情報を受け取りません</li><li>契約状態の確認に <strong>RevenueCat</strong> を使っています。RevenueCat が受け取るのは App Store のレシートと、アプリが作った匿名の識別子だけです。氏名も、メールアドレスも、ヘルスケアのデータも渡していません</li></ul>
+<ul><li>購入は App Store が処理します。HP はカード情報を受け取りません</li><li>契約状態の確認に <strong>RevenueCat</strong> を使っています。RevenueCat が受け取るのは App Store の購入記録、アプリが作った匿名の識別子（サインイン後はHPのアカウントID）、OS・端末・アプリのバージョンなど購入処理に必要な技術情報です。氏名も、メールアドレスも、ヘルスケアのデータも渡していません</li></ul>
+<p><strong>④ Appleでサインインと記録の保存（任意）</strong></p>
+<ul><li>Appleが本人確認を行い、HPはAppleのユーザー識別子とHP固有のIDを紐づけます。氏名・メールアドレスの提供は求めません。HPのIDはプランを識別するためRevenueCatにも使います。</li><li>設定 → アカウントと記録 →「保存」を確認した時だけ、プロフィール、HPと負債・計算時刻、ステータスと日次履歴、食事と栄養、飲み物、水分、体調・睡眠の自己申告をHP専用Cloudflare Workers/D1へ送ります。身体・健康に関する計測値や推定値を含みます。</li><li>通信はHTTPS、保存する記録とAppleの更新トークンはAES-GCMで暗号化します。エンドツーエンド暗号化ではありません。HealthKitの取得キャッシュ・アンカー、写真・縮小画像、端末ごとの許可は転送しません。</li><li>自動統合は行いません。保存・復元は明示操作で、競合する保存は拒否します。復元前の控えはそのアカウントの端末内に残します。</li><li>サインアウトしても保存先の記録は残ります。「HPアカウントを削除」で保存先とこの端末のアカウントデータを削除し、Appleの認可を取り消します。他の端末のオフライン記録は遠隔消去できません。運用バックアップはCloudflareの保持期間に従い残る場合があります。定期購入の解約はApp Storeで別途必要です。</li></ul>
 <h3>使っていないもの</h3>
-<ul><li><strong>広告はありません</strong></li><li><strong>解析ツール・トラッキング SDK は一つも入っていません</strong></li><li><strong>第三者へのデータ販売・提供はありません</strong></li></ul>
+<ul><li><strong>広告はありません</strong></li><li><strong>解析ツール・トラッキング SDK は一つも入っていません</strong></li><li><strong>データを販売せず、広告や追跡に提供しません</strong>。上記の機能を使う場合の処理先は明記しています</li></ul>
 <h3>あなたができること</h3>
-<ul><li><strong>書き出す</strong>: 設定 →「データを書き出す」</li><li><strong>消す</strong>: 設定 →「すべて削除」— 端末内の HP のデータをすべて消します</li><li><strong>ヘルスケアの許可を取り消す</strong>: iOS の設定 → プライバシーとセキュリティ → ヘルスケア</li><li><strong>写真のクラウド読み取りを止める</strong>: 設定 → 写真のクラウド読み取り</li></ul>
+<ul><li><strong>書き出す</strong>: 設定 →「データを書き出す」— 保存された縮小画像も含みます。書き出したファイルの保管・共有先はあなたが選びます</li><li><strong>消す</strong>: 設定のデータ削除は現在開いている端末内の記録が対象です。アカウントの保存先と控えも削除する場合は「アカウントと記録 → HPアカウントを削除」を使います</li><li><strong>ヘルスケアの許可を取り消す</strong>: iOS の設定 → プライバシーとセキュリティ → ヘルスケア</li><li><strong>写真のクラウド読み取りを止める</strong>: 設定 → 写真のクラウド読み取り</li></ul>
 <h3>子どもについて</h3>
 <p>HP は 13 歳未満の子どもに向けて作られていません。意図的に子どもの情報を集めることはありません。</p>
 <h3>このポリシーの変更</h3>
@@ -43,21 +45,23 @@
 <hr>
 <h2>English</h2>
 <h3>In short</h3>
-<p><strong>HP has no accounts.</strong> There is no sign-in and no registration. What you record stays <strong>on your device</strong>.</p>
-<p>Exactly <strong>one</strong> thing can leave it — <strong>a photo of a meal, when you ask HP to read one</strong> — and only if you have HP Pro <em>and</em> have agreed on a screen that says so.</p>
-<h3>What never leaves your device</h3>
-<ul><li><strong>Health data</strong> (sleep, heart rate, resting heart rate, heart-rate variability, activity, body measurements, medications, cycle) — HP reads it and sends it nowhere</li><li><strong>Meals you type</strong> — read by Apple's on-device model. No network call</li><li><strong>Water, how you feel, settings, your HP history</strong> — kept in a file on the device</li></ul>
+<p>HP works without an account. Optional Sign in with Apple lets you save records to HP’s dedicated storage and restore them on another device. Signing in alone does not upload health records.</p>
+<p>Photo reading, permitted weather requests, and purchase verification use external services. A meal photo is sent only with HP Pro and your explicit consent. Health data is never sent for photo analysis. Account record transfers are described in section 4 below.</p>
+<h3>What is normally processed on your device</h3>
+<ul><li><strong>Health data</strong> (sleep, heart rate, resting heart rate, heart-rate variability, activity, body measurements, medications, cycle) — raw query caches and anchors stay on this device. Measurements and estimates contained in HP, ability history and body measurements are included when you choose to save account records</li><li><strong>Meals you type</strong> — read by Apple's on-device model. Saved meal records are included in optional account transfers</li><li><strong>Water, how you feel, settings, your HP history</strong> — kept in a file on the device</li></ul>
 <h3>What can leave your device</h3>
 <p><strong>1. A meal photo (only with Pro, and only after you agree)</strong></p>
-<ul><li>No photo is sent until you press the button on the consent screen</li><li>It goes through HP's own relay (Cloudflare Workers) to <strong>OpenAI</strong></li><li>The relay <strong>stores nothing</strong>. It has no storage attached to it at all — no KV, no R2, no database, no queue</li><li>What comes back is <strong>names of foods and rough amounts</strong>. No calories and no nutrition figures are asked for</li><li><strong>HP does not keep the photo.</strong> Once it has been read it is not retained in the app</li><li>You can withdraw this at any time: Settings → Cloud photo reading</li></ul>
+<ul><li>No photo is sent until you press the button on the consent screen</li><li>It goes through HP's own relay (Cloudflare Workers) to <strong>OpenAI</strong></li><li>The relay <strong>stores nothing</strong>. It has no storage attached to it at all — no KV, no R2, no database, no queue</li><li>What comes back is <strong>names of foods and rough amounts</strong>. No calories and no nutrition figures are asked for</li><li><strong>HP’s relay does not retain the photo.</strong> Saving the meal keeps a thumbnail, no more than 200 pixels on its longest edge, in your local meal record and history. The original and source metadata such as GPS are not saved</li><li>OpenAI API data is not used for training unless the API customer explicitly opts in to data sharing. HP does not send photos for training</li><li>OpenAI may retain inputs for abuse monitoring, normally for up to 30 days, with exceptions for legal or safety needs and image safety review. The relay’s lack of storage does not mean OpenAI has zero retention. See <a href="https://developers.openai.com/api/docs/guides/your-data">OpenAI’s data controls</a></li><li>You can withdraw this at any time: Settings → Cloud photo reading</li></ul>
 <p><strong>2. Approximate location (only if you allow it)</strong></p>
 <ul><li>Used only to read the weather. <strong>Approximate, not precise</strong></li><li>It reaches exactly two things: the weather shown at the top of Home, and that day's water goal</li><li>If you decline, the weather quietly disappears and nothing is said about it</li></ul>
 <p><strong>3. Purchases</strong></p>
-<ul><li>Purchases are handled by the App Store. HP never sees a card</li><li><strong>RevenueCat</strong> is used to check whether a subscription is active. It receives the App Store receipt and an anonymous identifier the app generates — no name, no email address, and no health data</li></ul>
+<ul><li>Purchases are handled by the App Store. HP never sees a card</li><li><strong>RevenueCat</strong> is used to check whether a subscription is active. It receives purchase records, an anonymous app-generated identifier (or your HP account ID after sign-in), and technical information such as OS, device and app versions — no name, no email address, and no health data</li></ul>
+<p><strong>4. Sign in with Apple and saved records (optional)</strong></p>
+<ul><li>Apple authenticates you. HP links Apple’s subject identifier to an HP account ID, which also identifies your plan in RevenueCat. HP does not request your name or email.</li><li>Only after you confirm Save in Account &amp; records, HP sends your profile, HP/debt/calculation timestamp, abilities and daily history, meals and nutrients, drinks, water, and body/sleep reports to dedicated Cloudflare Workers/D1 storage. These records contain health measurements and estimates.</li><li>HTTPS protects transport; AES-GCM encrypts stored records and Apple refresh tokens. This is not end-to-end encryption. Raw HealthKit query caches/anchors, photos/thumbnails and device permissions are excluded.</li><li>Save and Restore are explicit; records are not automatically merged. Conflicting saves are rejected. A pre-restore copy stays inside this account’s local storage.</li><li>Signing out retains saved records. Delete HP account deletes active cloud records and this account’s local files and revokes Apple authorization. Other devices’ offline copies cannot be remotely erased. Operational backups may remain for Cloudflare’s retention period. App Store subscriptions must be cancelled separately.</li></ul>
 <h3>What HP does not do</h3>
-<ul><li><strong>No advertising</strong></li><li><strong>No analytics or tracking SDKs of any kind</strong></li><li><strong>No selling or sharing of data with third parties</strong></li></ul>
+<ul><li><strong>No advertising</strong></li><li><strong>No analytics or tracking SDKs of any kind</strong></li><li><strong>No sale of data or sharing for advertising or tracking</strong>. Processing by the services above occurs only for the described features</li></ul>
 <h3>What you can do</h3>
-<ul><li><strong>Export</strong>: Settings → Export my data</li><li><strong>Delete</strong>: Settings → Delete everything — removes HP's data from the device</li><li><strong>Revoke Health access</strong>: iOS Settings → Privacy &amp; Security → Health</li><li><strong>Stop cloud photo reading</strong>: Settings → Cloud photo reading</li></ul>
+<ul><li><strong>Export</strong>: Settings → Export my data — includes saved thumbnails; you choose where to keep or share the exported file</li><li><strong>Delete</strong>: The data deletion control removes the current local records. Use Account &amp; records → Delete HP account to also delete its cloud records and local recovery copies</li><li><strong>Revoke Health access</strong>: iOS Settings → Privacy &amp; Security → Health</li><li><strong>Stop cloud photo reading</strong>: Settings → Cloud photo reading</li></ul>
 <h3>Children</h3>
 <p>HP is not directed at children under 13, and does not knowingly collect their information.</p>
 <h3>Changes</h3>
